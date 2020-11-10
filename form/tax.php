@@ -10,6 +10,6 @@ echo '<br>';
 
 // この下にコードを書いてください
 $taxIncludedPrice = $price + $price * $taxRate;
-echo '税込価格は'.$taxIncludePrice.'円です';
+echo '税込価格は'.$taxIncludedPrice.'円です';
 
 ?>
