@@ -18,5 +18,10 @@ class Menu {
   public function hello() {
     echo '私は'.$this->name.'です';
   }
+  
+    // getTaxIncludedPriceメソッドを定義してください
+    public function getTaxIncludedPrice() {
+      return floor($this->price * 1.08);
+}
 }
 ?>
