@@ -19,7 +19,7 @@
         $orderCount = $_POST[$menu->getName()];
         $menu->setOrderCount($orderCount);
         // $totalPaymentに、$menuのgetTotalPriceメソッドで得た値を足してください
-        $totalPayment += $menu->getTotalPrice();            
+        $totalPayment += $menu->getTotalPrice();
 
         
         
