@@ -11,4 +11,13 @@ $pasta = new Food('PASTA', 1200, 'https://s3-ap-northeast-1.amazonaws.com/progat
 
 $menus = array($juice, $coffee, $curry, $pasta);
 
+// 変数$review1にReviewクラスのインスタンスを代入してください
+$review1 = new Review($juice->getName(), '果肉たっぷりのオレンジジュースです！');
+
+
+// 変数$review2にReviewクラスのインスタンスを代入してください
+$review2 = new Review($curry->getName(), '具がゴロゴロしていてとてもおいしいです');
+
+// 変数$reviewsに$review1と$review2を要素とする配列を代入してください
+$reviews = array($review1, $review2);
 ?>
