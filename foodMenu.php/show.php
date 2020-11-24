@@ -4,7 +4,7 @@ require_once('data.php');
 
 $menuName = $_GET['name'];
 $menu = Menu::findByName($menus, $menuName);
-
+$menuReviews = $menu->getReviews($reviews);
 ?>
 
 <!DOCTYPE html>
@@ -37,13 +37,20 @@ $menu = Menu::findByName($menus, $menuName);
           <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/review.png" class='icon-review'>
           <h4>レビュー一覧</h4>
         </div>
-        <!-- foreach文を書いてください -->
-        
-        <?php foreach($reviews as $review): ?>
-          <h3><?php echo $review->getMenuName() ?></h3>
-          <p><?php echo $review->getBody() ?></p>
+        <?php foreach ($menuReviews as $review): ?>
+          <?php $user = $review->getUser($users) ?>
+          <div class="review-list-item">
+            <div class="review-user">
+              <?php if ($user->getGender() == 'male'): ?>
+                <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/male.png" class='icon-user'>
+              <?php else: ?>
+                <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/female.png" class='icon-user'>
+              <?php endif ?>
+              <p><?php echo $user->getName() ?></p>
+            </div>
+            <p class="review-text"><?php echo $review->getBody() ?></p>
+          </div>
         <?php endforeach ?>
-        
       </div>
     </div>
     <a href="index.php">← メニュー一覧へ</a>
