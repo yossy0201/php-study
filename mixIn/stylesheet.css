@@ -55,7 +55,7 @@ header {
 		  @include card;
 		}
 
-footer {
+footer { 
 	margin: 100px 0 32px;
 	color: #2b546a;
 	font-size: 14px;
