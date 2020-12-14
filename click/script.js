@@ -1,13 +1,46 @@
 $(function() {
-  // 「#change-text」要素に対するclickイベントを作成してください
-  $('#change-text').click(function() {
-    $('#text').text('ようこそ、Progateへ');
+
+  $('#login-show').click(function() {
+    $('#login-modal').fadeIn();
+  });
+
+  $('.signup-show').click(function() {
+    $('#signup-modal').fadeIn();
+  });
+
+  $('.close-modal').click(function() {
+    $('#login-modal').fadeOut();
+    $('#signup-modal').fadeOut();
   });
   
-  // 「#change-html」要素に対するclickイベントを作成してください
-  $('#change-html').click(function() {
-    $('#text').html('<a href="https://prog-8.com/">ようこそ、Progateへ</a>');
+  $('.lesson-hover').hover(
+    function() {
+      $(this).find('.text-contents').addClass('text-active'); 
+    },
+    function() {
+      $(this).find('.text-contents').removeClass('text-active');
+    }
+  );
+
+  // FAQのアコーディオン
+  $('.faq-list-item').click(function() {
+    var $answer = $(this).find('.answer');
+    if($answer.hasClass('open')) { 
+      $answer.removeClass('open');
+      // slideUpメソッドを用いて、$answerを隠してください
+      $answer.slideUp();
+
+      // 子要素のspanタグの中身をtextメソッドを用いて書き換えてください
+      $(this).find('span').text('+');
+      
+    } else {
+      $answer.addClass('open'); 
+      // slideDownメソッドを用いて、$answerを表示してください
+      $answer.slideDown();
+      
+      // 子要素のspanタグの中身をtextメソッドを用いて書き換えてください
+      $(this).find('span').text('-');
+      
+    }
   });
-   
-  
 });
